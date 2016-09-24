@@ -7,9 +7,48 @@
 <link rel="stylesheet" type="text/css" href="css/codemirror.css">
 </head>
 <body>
-<pre><code class="javascript">
-    zz = a => 1
+<pre><code class="clojure">
+    (map inc [1 2 3])
     </code></pre>
+<pre><code class="clojure">
+(ns my.ns
+  (:require [clojure.set :refer [union]]))
+
+  (union #{1 2} #{2 3})
+    </code></pre>
+
+<pre><code class="clojure">
+    (ns my.spec
+      (:require [cljs.spec :as s]))
+    (s/conform even? 1000)
+    </code></pre>
+
+<pre><code class="clojure">
+    (ns my.ns
+      (:require-macros [clojure.pprint :refer [pprint]]))
+
+      (pprint "adsa")
+    </code></pre>
+
+<pre><code class="clojure">
+    (ns my.gadjett
+    (:require-macros [gadjett.core :refer [dbg]]))
+    [(dbg (map inc [1 2 3]))]
+</code></pre>
+<pre><code class="clojure">
+    (ns my.ns
+    (:require cljs.core.match)
+    (:require-macros [cljs.core.match :refer [match]]))
+
+  (defn n 18)
+(match [(mod n 3) (mod n 5)]
+           [0 0] "FizzBuzz"
+           [0 _] "Fizz"
+           [_ 0] "Buzz"
+           :else n)
+
+    </code></pre>
+
 
 <script>
     window.klipse_settings = {
