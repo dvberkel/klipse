@@ -7,35 +7,40 @@
 <link rel="stylesheet" type="text/css" href="css/codemirror.css">
 </head>
 <body>
-<pre><code class="clojure">
+<pre><code class="aclojure">
     (map inc [1 2 3])
     </code></pre>
-<pre><code class="clojure">
+<pre><code class="aclojure">
 (ns my.ns
   (:require [clojure.set :refer [union]]))
-
   (union #{1 2} #{2 3})
     </code></pre>
 
-<pre><code class="clojure">
+<pre><code class="aaaclojure">
+    (ns my.cljs
+    (:require [cljs.js :as cljs :refer [eval-str empty-state js-eval]]))
+    (def sta (empty-state))
+    (eval-str sta "(map inc [1 2 3])" "dontcare" {:eval js-eval} identity)
+    </code></pre>
+<pre><code class="aclojure">
     (ns my.spec
       (:require [cljs.spec :as s]))
     (s/conform even? 1000)
     </code></pre>
 
-<pre><code class="clojure">
+<pre><code class="aclojure">
     (ns my.ns
       (:require-macros [clojure.pprint :refer [pprint]]))
 
       (pprint "adsa")
     </code></pre>
 
-<pre><code class="clojure">
+<pre><code class="aclojure">
     (ns my.gadjett
     (:require-macros [gadjett.core :refer [dbg]]))
     [(dbg (map inc [1 2 3]))]
 </code></pre>
-<pre><code class="clojure">
+<pre><code class="aclojure">
     (ns my.ns
     (:require cljs.core.match)
     (:require-macros [cljs.core.match :refer [match]]))
